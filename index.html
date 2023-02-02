@@ -5,18 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Socket.io Chat</title>
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./assets/main.css">
 </head>
 <body>
     <header>
-        <ul class="messages">
-            <li>Message 1</li>
-            <li>Message 2</li>
-            <li>Message 3</li>
-        </ul>
+        <ul class="messages"></ul>
 
         <form class="form">
-            <div class="name"></div>
+            <div class="name">Aziz</div>
             <input type="text" class="input" autocomplete="off">
             <button class="btn">Send</button>
 
@@ -26,8 +22,9 @@
 
 
 
-
-    <script src="./main.js"></script>
+    <script src="./node_modules/socket.io/client-dist/socket.io.js"></script>
+    
+    <script src="./assets/main.js"></script>
 </body>
 </html>
 
