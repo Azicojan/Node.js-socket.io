@@ -7,15 +7,6 @@ const nameBlock = document.querySelector('.name');
 const userName = prompt('Your name:');
 nameBlock.innerHTML = `${userName}`;
 
-socket.on('chat message', (data)=> {
-    const item = document.createElement('li')
-    item.innerHTML = `<span>${data.name}</span>:${data.message}`
-    messages.appendChild(item);
-    window.scrollTo(0, document.body.scrollHeight)
-})
-
-
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -24,9 +15,24 @@ form.addEventListener('submit', (e) => {
             message: input.value,
             name: userName
         })
-        input.value = ''
+        input.value = '';
     }
+});
+
+
+
+
+
+socket.on('chat message', (msg)=> {
+    const item = document.createElement('li')
+    item.innerHTML = `<span>${msg.name}</span>:${msg.message}`
+    messages.appendChild(item);
+    window.scrollTo(0, document.body.scrollHeight)
 })
+
+
+
+
 
 
 
